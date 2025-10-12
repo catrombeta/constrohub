@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import {
   ChatBubbleBottomCenterIcon,
-  DocumentMagnifyingGlassIcon
+  DocumentMagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { Link, NavLink, To } from "react-router";
 import { useTranslation } from "react-i18next";
