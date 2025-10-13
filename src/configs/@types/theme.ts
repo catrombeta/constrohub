@@ -1,7 +1,7 @@
 import { ToasterProps } from "sonner";
 
-export type DarkColor = "mint";
-export type LightColor = "slate";
+export type DarkColor = "custom_dark";
+export type LightColor = "custom_light";
 export type PrimaryColor =
   | "indigo"
   | "blue"

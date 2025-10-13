@@ -6,8 +6,8 @@ import { Link } from "react-router";
 // Local Imports
 import { NavigationTree } from "@/@types/navigation";
 import { useThemeContext } from "@/app/contexts/theme/context";
-import LogoWhite from "@/assets/logos/logo-white.svg";
-import Logo from "@/assets/logos/logo.svg";
+import LogoWhite from "@/assets/logos/logo-white.png";
+import Logo from "@/assets/logos/logo.png";
 import { SegmentPath } from "..";
 import { Profile } from "../../Profile";
 import { Menu } from "./Menu";

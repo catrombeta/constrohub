@@ -1,6 +1,6 @@
 // Local Imports
-import LogoWhite from "@/assets/logos/logo-text-white.svg";
-import Logo from "@/assets/logos/logo-text.svg";
+import LogoWhite from "@/assets/logos/logo-white.png";
+import Logo from "@/assets/logos/logo.png";
 import { Progress } from "@/components/ui";
 
 export function SplashScreen() {

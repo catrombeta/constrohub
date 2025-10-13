@@ -2,15 +2,14 @@
 import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
 
 // Local Imports
 import { useAuthContext } from "@/app/contexts/auth/context";
 import { useThemeContext } from "@/app/contexts/theme/context";
-import LogoWhite from "@/assets/logos/logo-white.svg";
-import Logo from "@/assets/logos/logo.svg";
+import LogoWhite from "@/assets/logos/logo-white.png";
+import Logo from "@/assets/logos/logo.png";
 import { Page } from "@/components/shared/Page";
-import { Button, Card, Checkbox, Input, InputErrorMsg } from "@/components/ui";
+import { Button, Card, Input, InputErrorMsg } from "@/components/ui";
 import { AuthFormValues, schema } from "./schema";
 
 // ----------------------------------------------------------------------
@@ -43,22 +42,18 @@ export default function SignIn() {
     <Page title="Login">
       <main className="min-h-100vh grid w-full grow grid-cols-1 place-items-center">
         <div className="w-full max-w-[26rem] p-4 sm:px-5">
-          <div className="text-center">
-            <img
-              className="mx-auto size-16"
-              src={SrcImg}
-              alt="logo"
-            />
-            <div className="mt-4">
-              <h2 className="text-2xl font-semibold text-gray-600 dark:text-dark-100">
-                Welcome Back
-              </h2>
-              <p className="text-gray-400 dark:text-dark-300">
-                Please sign in to continue
-              </p>
-            </div>
-          </div>
           <Card className="mt-5 rounded-lg p-5 lg:p-7">
+            <div className="text-center my-5">
+              <img className="mx-auto size-16" src={SrcImg} alt="logo" />
+              <div className="mt-4">
+                <h2 className="dark:text-dark-100 text-2xl font-semibold text-gray-600">
+                  Welcome Back
+                </h2>
+                <p className="dark:text-dark-300 text-gray-400">
+                  Please sign in to continue
+                </p>
+              </div>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
               <div className="space-y-4">
                 <Input
@@ -96,31 +91,10 @@ export default function SignIn() {
                 </InputErrorMsg>
               </div>
 
-              <div className="mt-4 flex items-center justify-between space-x-2">
-                <Checkbox label="Remember me"/>
-                <a
-                  href="##"
-                  className="text-xs text-gray-400 transition-colors hover:text-gray-800 focus:text-gray-800 dark:text-dark-300 dark:hover:text-dark-100 dark:focus:text-dark-100"
-                >
-                  Forgot Password?
-                </a>
-              </div>
-
               <Button type="submit" className="mt-5 w-full" color="primary">
                 Sign In
               </Button>
             </form>
-            <div className="mt-4 text-center text-xs-plus">
-              <p className="line-clamp-1">
-                <span>Dont have Account?</span>{" "}
-                <Link
-                  className="text-primary-600 transition-colors hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-600"
-                  to="/pages/sign-up-v1"
-                >
-                  Create account
-                </Link>
-              </p>
-            </div>
             {/* <div className="my-7 flex items-center space-x-3 text-xs rtl:space-x-reverse">
               <div className="h-px flex-1 bg-gray-200 dark:bg-dark-500"></div>
               <p>OR</p>

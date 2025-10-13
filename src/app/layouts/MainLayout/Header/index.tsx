@@ -7,8 +7,6 @@ import SearchIcon from "@/assets/dualicons/search.svg?react";
 import { useThemeContext } from "@/app/contexts/theme/context";
 import { Search } from "@/components/template/Search";
 import { Button } from "@/components/ui";
-import { Notifications } from "@/components/template/Notifications";
-import { RightSidebar } from "@/components/template/RightSidebar";
 import { LanguageSelector } from "@/components/template/LanguageSelector";
 import { SidebarToggleBtn } from "@/components/shared/SidebarToggleBtn";
 
@@ -74,8 +72,6 @@ export function Header() {
             </>
           )}
         />
-        <Notifications />
-        <RightSidebar />
         <LanguageSelector />
       </div>
     </header>

@@ -46,9 +46,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }));
   };
 
+  console.log(isDark)
+
   useLayoutEffect(() => {
     if (isDark) _html?.classList.add("dark");
     else _html?.classList.remove("dark");
+
+    console.log(isDark)
   }, [isDark]);
 
   useLayoutEffect(() => {

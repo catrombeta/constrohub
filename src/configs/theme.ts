@@ -6,13 +6,13 @@ import {
   ThemeConfig,
 } from "./@types/theme";
 
-const DEFAULT_DARK_COLOR: DarkColor = "mint";
-const DEFAULT_LIGHT_COLOR: LightColor = "slate";
+const DEFAULT_DARK_COLOR: DarkColor = "custom_dark";
+const DEFAULT_LIGHT_COLOR: LightColor = "custom_light";
 const DEFAULT_PRIMARY_COLOR: PrimaryColor = "custom";
 
 // Default theme configuration
 export const defaultTheme: ThemeConfig = {
-  themeMode: "system",
+  themeMode: "light",
   themeLayout: "main-layout",
   cardSkin: "shadow",
 
