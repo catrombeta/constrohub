@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { HiChartBar, HiUser } from "react-icons/hi2";
+import { HiChartBar, HiUser, HiUsers } from "react-icons/hi2";
 import { HomeIcon } from "@heroicons/react/24/outline";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 
@@ -11,4 +11,6 @@ export const navigationIcons: Record<string, ElementType> = {
   settings: Cog6ToothIcon,
   "dashboards.home": HomeIcon,
   "settings.general": HiUser,
+  "clients": HiUsers,
+  "clients.list": HiUsers,
 };

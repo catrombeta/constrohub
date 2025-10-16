@@ -12,6 +12,14 @@ export const baseNavigationObj: Record<string, NavigationTree> = {
     title: "Dashboards",
     transKey: "nav.dashboards.dashboards",
     icon: "dashboards",
+  },
+  clients: {
+    id: "clients",
+    type: "item",
+    path: "/clients",
+    title: "Clientes",
+    transKey: "nav.clients.clients",
+    icon: "clients",
   }
 };
 

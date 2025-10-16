@@ -4,6 +4,11 @@
       "dashboards": "Dashboards",
       "home": "Home"
     },
+    "clients": {
+      "clients": "Clients",
+      "list": "Client List",
+      "add": "Add Client"
+    },
     "settings": {
       "settings": "Settings",
       "general": "General"
