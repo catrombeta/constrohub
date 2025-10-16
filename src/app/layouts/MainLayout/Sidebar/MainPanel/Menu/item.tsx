@@ -1,13 +1,11 @@
 // Import Dependencies
 import clsx from "clsx";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { ComponentPropsWithoutRef, ElementType, useRef } from "react";
+import { ComponentPropsWithoutRef, ElementType } from "react";
 import { type To, useRouteLoaderData } from "react-router";
 
 // Local Imports
 import { useBreakpointsContext } from "@/app/contexts/breakpoint/context";
-import { useThemeContext } from "@/app/contexts/theme/context";
-import { navigationLottieIcons } from "@/app/navigation/icons";
+import { navigationIcons } from "@/app/navigation/icons";
 import { Badge } from "@/components/ui";
 import { ColorType } from "@/constants/app";
 import { createScopedKeydownHandler } from "@/utils/dom/createScopedKeydownHandler";
@@ -34,21 +32,17 @@ export function Item({
   onKeyDown,
   ...rest
 }: ItemProps) {
-  if (!icon || !navigationLottieIcons[icon]) {
+  if (!icon || !navigationIcons[icon]) {
     throw new Error(`Icon ${icon} not found in navigationIcons`);
   }
 
   const Element = component || "button";
-  const { isDark } = useThemeContext();
   const { lgAndUp } = useBreakpointsContext();
   const info = useRouteLoaderData("root")?.[id]?.info as
     | { val?: string; color?: ColorType }
     | undefined;
 
-  const IconSet = navigationLottieIcons[icon];
-  const animationData = isDark ? IconSet.dark : IconSet.light;
-
-   const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const Icon = navigationIcons[icon];
 
   return (
     <Element
@@ -70,20 +64,17 @@ export function Item({
         orientation: "vertical",
         onKeyDown,
       })}
-      onMouseEnter={() => lottieRef.current?.play()}
-      onMouseLeave={() => lottieRef.current?.stop()}
       {...rest}
     >
-      <Lottie
-        lottieRef={lottieRef}
-        animationData={animationData}
-        loop={false}
-        autoplay={false}
-        className="size-6"
-        rendererSettings={{
-          preserveAspectRatio: "xMidYMid slice",
-        }}
+      <Icon
+        className={clsx(
+          "size-6 transition-colors",
+          isActive
+            ? "text-primary-600 dark:text-primary-400"
+            : "text-gray-500 dark:text-dark-200",
+        )}
       />
+
       {info?.val && (
         <Badge
           color={info.color}
